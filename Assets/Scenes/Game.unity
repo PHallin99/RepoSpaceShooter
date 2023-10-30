@@ -798,7 +798,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 314418876}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18b8a893cc679594cab4dd06cef87885, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f53a1d4b7504907a24ad78b5347034e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &314418882
@@ -810,14 +810,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 314418876}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f02b1578417ba0640b941478a6f2777c, type: 3}
+  m_Script: {fileID: 11500000, guid: cc180d4346354957af0f8a89b489d579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerRespawnClip: {fileID: 7400000, guid: d3a4bb4ee6b265b43a577c1d130fa951, type: 2}
   laserPrefab: {fileID: 4427959884363970162, guid: e6772aaebe427494eb861a8e7453bf6c, type: 3}
   laserSpawnPoint: {fileID: 1620399818}
-  rotationSpeed: 150
-  thrustAmount: 5
 --- !u!114 &314418883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -827,7 +825,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 314418876}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55999a9826c64d143b17ece15dee5ffa, type: 3}
+  m_Script: {fileID: 11500000, guid: 50deefa276d74137aa2c6af853805b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 314418884}
@@ -1424,7 +1422,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 533739923}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfc8a4c76aaec7444ae158e2df4fa0aa, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f8f45eb528147709e763f92ffd8658e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   asteroidPrefabs:
@@ -2478,7 +2476,7 @@ SpriteRenderer:
   m_Size: {x: 9.6, y: 5.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1535578956
@@ -3063,14 +3061,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03ca83bd4a742f58c4f3a142e83d28f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreManager: {fileID: 0}
-  uIUpdater: {fileID: 0}
-  menuUI: {fileID: 0}
-  gameGameObjects: {fileID: 0}
-  gameUI: {fileID: 0}
-  gameOverUI: {fileID: 0}
-  highScoreText: {fileID: 0}
-  lastGameScore: {fileID: 0}
+  scoreManager: {fileID: 1411465864}
+  uIUpdater: {fileID: 1929225441}
+  menuUI: {fileID: 1067373852}
+  gameGameObjects: {fileID: 284226436}
+  gameUI: {fileID: 445374831}
+  gameOverUI: {fileID: 833719514}
+  highScoreText: {fileID: 2071263939}
+  lastGameScore: {fileID: 285165996}
 --- !u!114 &1929225441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3080,17 +3078,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1929225438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c03ca83bd4a742f58c4f3a142e83d28f, type: 3}
+  m_Script: {fileID: 11500000, guid: 56d7686a1f8f49a08b2efcb817fb5460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreManager: {fileID: 0}
-  uIUpdater: {fileID: 0}
-  menuUI: {fileID: 0}
-  gameGameObjects: {fileID: 0}
-  gameUI: {fileID: 0}
-  gameOverUI: {fileID: 0}
-  highScoreText: {fileID: 0}
-  lastGameScore: {fileID: 0}
+  player: {fileID: 314418876}
+  lifeUIObjects:
+  - {fileID: 80311080}
+  - {fileID: 2032258828}
+  - {fileID: 838362947}
+  scoreText: {fileID: 436890316}
+  highScoreBeatUI: {fileID: 795328214}
+  gameOverScoreText: {fileID: 1771042373}
 --- !u!1 &2032258828
 GameObject:
   m_ObjectHideFlags: 0
