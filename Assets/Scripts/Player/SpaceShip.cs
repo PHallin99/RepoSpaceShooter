@@ -7,8 +7,6 @@ namespace Player {
         [SerializeField] private AnimationClip playerRespawnClip;
         [SerializeField] private GameObject laserPrefab;
         [SerializeField] private Transform laserSpawnPoint;
-        [SerializeField] private float rotationSpeed;
-        [SerializeField] private float thrustAmount;
 
         private float angularVelocity;
         private float horizontalInput;
