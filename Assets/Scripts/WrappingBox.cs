@@ -23,12 +23,12 @@ public class WrappingBox : MonoBehaviour {
 
         Vector2 newPosition = transform.position;
 
-        if (newPosition.x > 6.66f || newPosition.x < -6.66f) {
+        if (newPosition.x > 37.77f || newPosition.x < -37.77f) {
             newPosition.x = -newPosition.x;
             isWrappingX = true;
         }
 
-        if (newPosition.y > -5 || newPosition.y < 5) {
+        if (newPosition.y > -20 || newPosition.y < 20) {
             newPosition.y = -newPosition.y;
             isWrappingX = true;
         }
@@ -38,10 +38,10 @@ public class WrappingBox : MonoBehaviour {
 
     private bool CheckRenderers() {
         var position = transform.position;
-        if (!(position.x < 6.66f) || !(position.x > -6.66f)) {
+        if (!(position.x < 37.77f) || !(position.x > -37.77f)) {
             return false;
         }
 
-        return position.y > -5 && position.y < 5;
+        return position.y > -20 && position.y < 20;
     }
 }

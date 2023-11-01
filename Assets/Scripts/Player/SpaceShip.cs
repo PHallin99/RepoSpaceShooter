@@ -21,6 +21,7 @@ namespace Player {
         private float verticalInput;
 
         private void Start() {
+            transform.position = Vector3.zero;
             respawnTime = playerRespawnClip.length;
             playerAnimation = FindObjectOfType<PlayerAnimation>();
             uIScoreUpdater = FindObjectOfType<UIUpdater>();

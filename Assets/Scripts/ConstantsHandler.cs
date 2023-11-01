@@ -32,6 +32,7 @@ public static class ConstantsHandler {
     // Laser
     public static float LaserMovementSpeed = 6f;
     public static float ShootCooldown = 0.15f;
+    public const float MaxSpawnTimeModifier = 4.5f;
 
     public static void InitializeValues(float majorAsteroidMovementSpeed, float mediumAsteroidMovementSpeed,
         float minorAsteroidMovementSpeed, float protectedDuration, float timeToSpawn, float laserMovementSpeed,
