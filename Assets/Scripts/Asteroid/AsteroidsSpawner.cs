@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Asteroid {
     public class AsteroidsSpawner : MonoBehaviour {
@@ -34,7 +32,8 @@ namespace Asteroid {
 
         private void SpawnAsteroid() {
             var selectedAsteroid = asteroidPrefabs[Random.Range(0, asteroidPrefabs.Length)];
-            var selectedSpawnPoint = new Vector2(Random.Range(-6.66f, 6.66f), Random.Range(-5, 5));
+            var selectedSpawnPoint = new Vector2(Random.Range(-ConstantsHandler.SpawnRangeX, ConstantsHandler.SpawnRangeX),
+                                                 Random.Range(-ConstantsHandler.SpawnRangeY, ConstantsHandler.SpawnRangeY));
 
             Instantiate(selectedAsteroid, selectedSpawnPoint, selectedAsteroid.transform.rotation);
             StartCoroutine(AsteroidSpawnCounter());

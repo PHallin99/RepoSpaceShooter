@@ -28,6 +28,9 @@ public static class ConstantsHandler {
     public static float MinorAsteroidMovementSpeed = 2.5f;
     public static float ProtectedDuration = 0.75f;
     public static float TimeToSpawn = 5f;
+    public static float SpawnRangeX = 37.77f;
+    public static float SpawnRangeY = 20f;
+    
 
     // Laser
     public static float LaserMovementSpeed = 6f;
