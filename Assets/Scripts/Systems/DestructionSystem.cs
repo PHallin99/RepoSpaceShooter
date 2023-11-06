@@ -14,7 +14,6 @@ namespace Systems {
                 ecb.DestroyEntity(destructionTag.Entity);
             }
 
-            state.Dependency.Complete();
             ecb.Playback(state.EntityManager);
         }
     }

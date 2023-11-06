@@ -177,4 +177,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveRate: 10
   collisionRadius: 0.05
-  lifeTime: 5
+  lifeTime: 3

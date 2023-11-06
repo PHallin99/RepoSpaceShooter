@@ -29,7 +29,6 @@ namespace Components {
             var randomPosition = spaceRandom.ValueRW.Value.NextFloat3(
                 new float3(-spaceProperties.ValueRO.ScreenDimensions.x + 1, -spaceProperties.ValueRO.ScreenDimensions.y + 1, 0),
                 new float3(spaceProperties.ValueRO.ScreenDimensions.x - 1, spaceProperties.ValueRO.ScreenDimensions.y - 1, 0));
-            randomPosition.z = 15f;
             return randomPosition;
         }
 

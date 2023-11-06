@@ -15,7 +15,7 @@ namespace Systems {
             var ecb = new EntityCommandBuffer(Allocator.Temp);
             foreach (var (laserPrefab, transform) in SystemAPI.Query<LaserPrefab, LocalTransform>().WithAll<FireLaserTag>()) {
                 var newLaser = ecb.Instantiate(laserPrefab.Value);
-                var laserTransform = LocalTransform.FromPositionRotationScale(transform.Position, transform.Rotation, 1f);
+                var laserTransform = LocalTransform.FromPositionRotationScale(transform.Position + transform.Right() * 0.57f, transform.Rotation, 1f);
                 
                 ecb.SetComponent(newLaser, laserTransform);
             }
