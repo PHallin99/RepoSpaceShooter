@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerAuthor : MonoBehaviour {
     public float rotationSpeed;
     public float thrustAmount;
+    public float collisionRadius;
     public int playerStartLives;
     public GameObject laserPrefab;
 }
@@ -20,7 +21,10 @@ public class PlayerBaker : Baker<PlayerAuthor> {
         AddComponent(playerEntity, new FireLaserTag());
         AddComponent(playerEntity, new ScreenWrapTag());
 
-
+        AddComponent(playerEntity, new CircleCollisionRadius{
+            Value = authoring.collisionRadius,
+            Entity = playerEntity
+        });
         AddComponent(playerEntity, new LaserPrefab{
             Value = GetEntity(authoring.laserPrefab, TransformUsageFlags.Dynamic)
         });
