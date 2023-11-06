@@ -7,7 +7,7 @@ namespace Systems {
     [UpdateInGroup(typeof(InitializationSystemGroup), OrderLast = true)]
     public partial class GetPlayerInputSystem : SystemBase {
         private SpaceShipControlActions spaceShipControlActions;
-        private Entity PlayerEntity;
+        private Entity playerEntity;
 
         protected override void OnCreate() {
             RequireForUpdate<PlayerTag>();
@@ -19,7 +19,7 @@ namespace Systems {
         protected override void OnStartRunning() {
             spaceShipControlActions.Enable();
             spaceShipControlActions.SpaceShipMap.PlayerShoot.performed += OnPlayerShoot;
-            PlayerEntity = SystemAPI.GetSingletonEntity<PlayerTag>();
+            playerEntity = SystemAPI.GetSingletonEntity<PlayerTag>();
         }
 
         protected override void OnUpdate() {
@@ -30,15 +30,15 @@ namespace Systems {
         protected override void OnStopRunning() {
             spaceShipControlActions.SpaceShipMap.PlayerShoot.performed -= OnPlayerShoot;
             spaceShipControlActions.Disable();
-            PlayerEntity = Entity.Null;
+            playerEntity = Entity.Null;
         }
 
         private void OnPlayerShoot(InputAction.CallbackContext obj) {
-            if (!SystemAPI.Exists(PlayerEntity)) {
+            if (!SystemAPI.Exists(playerEntity)) {
                 return;
             }
 
-            SystemAPI.SetComponentEnabled<FireLaserTag>(PlayerEntity, true);
+            SystemAPI.SetComponentEnabled<FireLaserTag>(playerEntity, true);
         }
     }
 }

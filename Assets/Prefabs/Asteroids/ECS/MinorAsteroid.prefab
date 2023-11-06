@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomSeed: 0
+  collisionRadius: 0
 --- !u!1 &2776920642061941720
 GameObject:
   m_ObjectHideFlags: 0

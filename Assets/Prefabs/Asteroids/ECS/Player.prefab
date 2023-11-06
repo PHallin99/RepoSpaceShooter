@@ -204,6 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 3
   thrustAmount: 5
+  collisionRadius: 0.3
   playerStartLives: 3
   laserPrefab: {fileID: 4427959884363970162, guid: 8d2617f2d29a0fa41875c364886e400f, type: 3}
 --- !u!1 &2966176292056535530
