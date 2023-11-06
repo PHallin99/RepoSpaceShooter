@@ -23,12 +23,12 @@ public class WrappingBox : MonoBehaviour {
 
         Vector2 newPosition = transform.position;
 
-        if (newPosition.x > 37.77f || newPosition.x < -37.77f) {
+        if (newPosition.x > ConstantsHandler.ScreenRangeX || newPosition.x < -ConstantsHandler.ScreenRangeX) {
             newPosition.x = -newPosition.x;
             isWrappingX = true;
         }
 
-        if (newPosition.y > -20 || newPosition.y < 20) {
+        if (newPosition.y > -ConstantsHandler.ScreenRangeY || newPosition.y < ConstantsHandler.ScreenRangeY) {
             newPosition.y = -newPosition.y;
             isWrappingX = true;
         }
@@ -38,10 +38,10 @@ public class WrappingBox : MonoBehaviour {
 
     private bool CheckRenderers() {
         var position = transform.position;
-        if (!(position.x < 37.77f) || !(position.x > -37.77f)) {
+        if (!(position.x < ConstantsHandler.ScreenRangeX) || !(position.x > -ConstantsHandler.ScreenRangeX)) {
             return false;
         }
 
-        return position.y > -20 && position.y < 20;
+        return position.y > -ConstantsHandler.ScreenRangeY && position.y < ConstantsHandler.ScreenRangeY;
     }
 }

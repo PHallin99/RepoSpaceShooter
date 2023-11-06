@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -34,7 +33,8 @@ namespace Asteroid {
 
         private void SpawnAsteroid() {
             var selectedAsteroid = asteroidPrefabs[Random.Range(0, asteroidPrefabs.Length)];
-            var selectedSpawnPoint = new Vector2(Random.Range(-6.66f, 6.66f), Random.Range(-5, 5));
+            var selectedSpawnPoint = new Vector2(Random.Range(-ConstantsHandler.ScreenRangeX, ConstantsHandler.ScreenRangeX),
+                Random.Range(-ConstantsHandler.ScreenRangeY, ConstantsHandler.ScreenRangeY));
 
             Instantiate(selectedAsteroid, selectedSpawnPoint, selectedAsteroid.transform.rotation);
             StartCoroutine(AsteroidSpawnCounter());

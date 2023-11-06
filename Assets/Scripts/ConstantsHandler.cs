@@ -28,6 +28,9 @@ public static class ConstantsHandler {
     public static float MinorAsteroidMovementSpeed = 2.5f;
     public static float ProtectedDuration = 0.75f;
     public static float TimeToSpawn = 5f;
+    public const float ScreenRangeX = 35.5f;
+    public const float ScreenRangeY = 20f;
+
 
     // Laser
     public static float LaserMovementSpeed = 6f;
