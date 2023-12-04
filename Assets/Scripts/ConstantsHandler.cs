@@ -8,15 +8,15 @@ public static class ConstantsHandler {
     public const string LaserTag = "Laser";
 
     // UI
-    public const string UIMajorAsteroidMovementSpeedString = "MajorAsteroidMovementSpeed";
-    public const string UIMediumAsteroidMovementSpeedString = "MediumAsteroidMovementSpeed";
-    public const string UIMinorAsteroidMovementSpeedString = "MinorAsteroidMovementSpeed";
-    public const string UIProtectionDurationString = "ProtectionDuration";
-    public const string UITimeToSpawnString = "TimeToSpawn";
-    public const string UILaserMovementSpeedString = "LaserMovementSpeed";
-    public const string UIShootCooldownString = "ShootCooldown";
-    public const string UIThrustAmountString = "ThrustAmount";
-    public const string UIRotationSpeedString = "RotationSpeed";
+    public const string MajorAsteroidMovementSpeedString = "MajorAsteroidMovementSpeed";
+    public const string MediumAsteroidMovementSpeedString = "MediumAsteroidMovementSpeed";
+    public const string MinorAsteroidMovementSpeedString = "MinorAsteroidMovementSpeed";
+    public const string ProtectionDurationString = "ProtectionDuration";
+    public const string TimeToSpawnString = "TimeToSpawn";
+    public const string LaserMovementSpeedString = "LaserMovementSpeed";
+    public const string ShootCooldownString = "ShootCooldown";
+    public const string ThrustAmountString = "ThrustAmount";
+    public const string RotationSpeedString = "RotationSpeed";
 
     //SpaceShip
     public static float RotationSpeed = 150;

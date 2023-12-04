@@ -3015,6 +3015,56 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &1914474330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1914474331}
+  - component: {fileID: 1914474332}
+  m_Layer: 0
+  m_Name: AsteroidPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1914474331
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914474330}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.266664, y: 7.7360244, z: -14.954544}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1914474332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914474330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc33aa78cda049218fdcb40392b59812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minorAsteroidPrefab: {fileID: 2776920641084987783, guid: 2dc03356e887a6347a44e4392d3e3ffc, type: 3}
+  mediumAsteroidPrefab: {fileID: 8286750539239163248, guid: 2ac1e7902a29e104a97e93586cfce45d, type: 3}
+  majorAsteroidPrefab: {fileID: 3024640403372245377, guid: f48b64c67901b4043b5078559d06f80f, type: 3}
+  minorPoolSize: 100
+  mediumPoolSize: 50
+  majorPoolSize: 25
 --- !u!1 &1929225438
 GameObject:
   m_ObjectHideFlags: 0
@@ -3384,5 +3434,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 498292013}
   - {fileID: 1411465865}
+  - {fileID: 1914474331}
   - {fileID: 284226437}
   - {fileID: 1929225439}

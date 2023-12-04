@@ -1,4 +1,3 @@
-using GlobalConstants;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -21,7 +20,7 @@ namespace Editor
             // Create a new field, disable it, and give it a style class.
             var majorAsteroidMovementSpeed = new Slider("Major Asteroid Movement Speed")
             {
-                name = ConstantsHandler.UIMajorAsteroidMovementSpeedString,
+                name = ConstantsHandler.MajorAsteroidMovementSpeedString,
                 value = ConstantsHandler.MajorAsteroidMovementSpeed,
                 showInputField = true
             };
@@ -29,7 +28,7 @@ namespace Editor
 
             var mediumAsteroidMovementSpeed = new Slider("Medium Asteroid Movement Speed")
             {
-                name = ConstantsHandler.UIMediumAsteroidMovementSpeedString,
+                name = ConstantsHandler.MediumAsteroidMovementSpeedString,
                 value = ConstantsHandler.MediumAsteroidMovementSpeed,
                 showInputField = true
             };
@@ -37,7 +36,7 @@ namespace Editor
 
             var minorAsteroidMovementSpeed = new Slider("Minor Asteroid Movement Speed")
             {
-                name = ConstantsHandler.UIMinorAsteroidMovementSpeedString,
+                name = ConstantsHandler.MinorAsteroidMovementSpeedString,
                 value = ConstantsHandler.MinorAsteroidMovementSpeed,
                 showInputField = true
             };
@@ -45,7 +44,7 @@ namespace Editor
 
             var protectionDuration = new Slider("Major Asteroid Movement Speed")
             {
-                name = ConstantsHandler.UIProtectionDurationString,
+                name = ConstantsHandler.ProtectionDurationString,
                 value = ConstantsHandler.ProtectedDuration,
                 showInputField = true
             };
@@ -53,7 +52,7 @@ namespace Editor
 
             var timeToSpawn = new Slider("Asteroid Spawn Interval")
             {
-                name = ConstantsHandler.UITimeToSpawnString,
+                name = ConstantsHandler.TimeToSpawnString,
                 showInputField = true,
                 value = ConstantsHandler.TimeToSpawn,
                 lowValue = 1
@@ -62,7 +61,7 @@ namespace Editor
 
             var rotationSpeed = new Slider("Rotation Speed")
             {
-                name = ConstantsHandler.UIRotationSpeedString,
+                name = ConstantsHandler.RotationSpeedString,
                 lowValue = 1,
                 highValue = 300,
                 value = ConstantsHandler.RotationSpeed,
@@ -72,7 +71,7 @@ namespace Editor
 
             var thrustAmount = new Slider("Thrust Amount")
             {
-                name = ConstantsHandler.UIThrustAmountString,
+                name = ConstantsHandler.ThrustAmountString,
                 value = ConstantsHandler.ThrustAmount,
                 showInputField = true
             };
@@ -80,7 +79,7 @@ namespace Editor
 
             var laserMovementSpeed = new Slider("Laser Movement Speed")
             {
-                name = ConstantsHandler.UILaserMovementSpeedString,
+                name = ConstantsHandler.LaserMovementSpeedString,
                 value = ConstantsHandler.LaserMovementSpeed,
                 showInputField = true
             };
@@ -88,7 +87,7 @@ namespace Editor
 
             var shootCooldown = new Slider("Shooting Cooldown")
             {
-                name = ConstantsHandler.UIShootCooldownString,
+                name = ConstantsHandler.ShootCooldownString,
                 value = ConstantsHandler.ShootCooldown,
                 showInputField = true
             };
@@ -130,19 +129,19 @@ namespace Editor
             var root = rootVisualElement;
 
             ConstantsHandler.MajorAsteroidMovementSpeed =
-                root.Query<Slider>(ConstantsHandler.UIMajorAsteroidMovementSpeedString).First().value;
+                root.Query<Slider>(ConstantsHandler.MajorAsteroidMovementSpeedString).First().value;
             ConstantsHandler.MediumAsteroidMovementSpeed =
-                root.Query<Slider>(ConstantsHandler.UIMediumAsteroidMovementSpeedString).First().value;
+                root.Query<Slider>(ConstantsHandler.MediumAsteroidMovementSpeedString).First().value;
             ConstantsHandler.MinorAsteroidMovementSpeed =
-                root.Query<Slider>(ConstantsHandler.UIMinorAsteroidMovementSpeedString).First().value;
+                root.Query<Slider>(ConstantsHandler.MinorAsteroidMovementSpeedString).First().value;
             ConstantsHandler.ProtectedDuration =
-                root.Query<Slider>(ConstantsHandler.UIProtectionDurationString).First().value;
-            ConstantsHandler.TimeToSpawn = root.Query<Slider>(ConstantsHandler.UITimeToSpawnString).First().value;
-            ConstantsHandler.RotationSpeed = root.Query<Slider>(ConstantsHandler.UIRotationSpeedString).First().value;
-            ConstantsHandler.ThrustAmount = root.Query<Slider>(ConstantsHandler.UIThrustAmountString).First().value;
+                root.Query<Slider>(ConstantsHandler.ProtectionDurationString).First().value;
+            ConstantsHandler.TimeToSpawn = root.Query<Slider>(ConstantsHandler.TimeToSpawnString).First().value;
+            ConstantsHandler.RotationSpeed = root.Query<Slider>(ConstantsHandler.RotationSpeedString).First().value;
+            ConstantsHandler.ThrustAmount = root.Query<Slider>(ConstantsHandler.ThrustAmountString).First().value;
             ConstantsHandler.LaserMovementSpeed =
-                root.Query<Slider>(ConstantsHandler.UILaserMovementSpeedString).First().value;
-            ConstantsHandler.ShootCooldown = root.Query<Slider>(ConstantsHandler.UIShootCooldownString).First().value;
+                root.Query<Slider>(ConstantsHandler.LaserMovementSpeedString).First().value;
+            ConstantsHandler.ShootCooldown = root.Query<Slider>(ConstantsHandler.ShootCooldownString).First().value;
         }
     }
 }
