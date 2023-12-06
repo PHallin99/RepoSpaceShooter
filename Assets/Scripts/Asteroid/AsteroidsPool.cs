@@ -38,7 +38,7 @@ namespace Asteroid {
         }
 
         public IPoolObject GetObject() {
-            var asteroidType = (AsteroidType)Random.Range(0, 2);
+            var asteroidType = (AsteroidType)Random.Range(0, 3);
             switch (asteroidType) {
                 case AsteroidType.Major:
                     return majorAsteroidPool.Count > 0 ? majorAsteroidPool.Pop() : null;
