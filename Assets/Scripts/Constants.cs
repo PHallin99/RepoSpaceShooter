@@ -1,4 +1,4 @@
-public static class ConstantsHandler {
+public static class Constants {
     // PlayerPrefs
     public const string HighScoreKey = "HighScore";
     public const string LastGameKey = "LastGameScore";

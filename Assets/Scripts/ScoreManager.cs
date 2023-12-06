@@ -15,11 +15,11 @@ public class ScoreManager : MonoBehaviour {
     }
 
     private void GetLocalHighScore() {
-        LocalHighScore = PlayerPrefs.GetInt(ConstantsHandler.HighScoreKey, 0);
+        LocalHighScore = PlayerPrefs.GetInt(Constants.HighScoreKey, 0);
     }
 
     private void GetLastGameScore() {
-        LastGameScore = PlayerPrefs.GetInt(ConstantsHandler.LastGameKey, 0);
+        LastGameScore = PlayerPrefs.GetInt(Constants.LastGameKey, 0);
     }
 
     public bool CompareToHighScore(int score) {
@@ -33,11 +33,11 @@ public class ScoreManager : MonoBehaviour {
     }
 
     private static void UpdateLocalHighScore(int score) {
-        PlayerPrefs.SetInt(ConstantsHandler.HighScoreKey, score);
+        PlayerPrefs.SetInt(Constants.HighScoreKey, score);
     }
 
     private static void UpdateLastGameScore(int score) {
-        PlayerPrefs.SetInt(ConstantsHandler.LastGameKey, score);
+        PlayerPrefs.SetInt(Constants.LastGameKey, score);
     }
 
     public void ResetScores() {

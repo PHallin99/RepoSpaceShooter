@@ -123,6 +123,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &21948696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 21948698}
+  - component: {fileID: 21948697}
+  m_Layer: 0
+  m_Name: LaserPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &21948697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21948696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a61c5799264313a2da4b855b0b6758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 20
+  laserPrefab: {fileID: 4427959884363970162, guid: e6772aaebe427494eb861a8e7453bf6c, type: 3}
+--- !u!4 &21948698
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21948696}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &54162553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1425,10 +1471,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f8f45eb528147709e763f92ffd8658e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidPrefabs:
-  - {fileID: 3024640403372245377, guid: f48b64c67901b4043b5078559d06f80f, type: 3}
-  - {fileID: 8286750539239163248, guid: 2ac1e7902a29e104a97e93586cfce45d, type: 3}
-  - {fileID: 2776920641084987783, guid: 2dc03356e887a6347a44e4392d3e3ffc, type: 3}
   spawnTick: 2
 --- !u!1 &633542469
 GameObject:
@@ -3435,5 +3477,6 @@ SceneRoots:
   - {fileID: 498292013}
   - {fileID: 1411465865}
   - {fileID: 1914474331}
+  - {fileID: 21948698}
   - {fileID: 284226437}
   - {fileID: 1929225439}

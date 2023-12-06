@@ -20,75 +20,75 @@ namespace Editor
             // Create a new field, disable it, and give it a style class.
             var majorAsteroidMovementSpeed = new Slider("Major Asteroid Movement Speed")
             {
-                name = ConstantsHandler.MajorAsteroidMovementSpeedString,
-                value = ConstantsHandler.MajorAsteroidMovementSpeed,
+                name = Constants.MajorAsteroidMovementSpeedString,
+                value = Constants.MajorAsteroidMovementSpeed,
                 showInputField = true
             };
             root.Add(majorAsteroidMovementSpeed);
 
             var mediumAsteroidMovementSpeed = new Slider("Medium Asteroid Movement Speed")
             {
-                name = ConstantsHandler.MediumAsteroidMovementSpeedString,
-                value = ConstantsHandler.MediumAsteroidMovementSpeed,
+                name = Constants.MediumAsteroidMovementSpeedString,
+                value = Constants.MediumAsteroidMovementSpeed,
                 showInputField = true
             };
             root.Add(mediumAsteroidMovementSpeed);
 
             var minorAsteroidMovementSpeed = new Slider("Minor Asteroid Movement Speed")
             {
-                name = ConstantsHandler.MinorAsteroidMovementSpeedString,
-                value = ConstantsHandler.MinorAsteroidMovementSpeed,
+                name = Constants.MinorAsteroidMovementSpeedString,
+                value = Constants.MinorAsteroidMovementSpeed,
                 showInputField = true
             };
             root.Add(minorAsteroidMovementSpeed);
 
             var protectionDuration = new Slider("Major Asteroid Movement Speed")
             {
-                name = ConstantsHandler.ProtectionDurationString,
-                value = ConstantsHandler.ProtectedDuration,
+                name = Constants.ProtectionDurationString,
+                value = Constants.ProtectedDuration,
                 showInputField = true
             };
             root.Add(protectionDuration);
 
             var timeToSpawn = new Slider("Asteroid Spawn Interval")
             {
-                name = ConstantsHandler.TimeToSpawnString,
+                name = Constants.TimeToSpawnString,
                 showInputField = true,
-                value = ConstantsHandler.TimeToSpawn,
+                value = Constants.TimeToSpawn,
                 lowValue = 1
             };
             root.Add(timeToSpawn);
 
             var rotationSpeed = new Slider("Rotation Speed")
             {
-                name = ConstantsHandler.RotationSpeedString,
+                name = Constants.RotationSpeedString,
                 lowValue = 1,
                 highValue = 300,
-                value = ConstantsHandler.RotationSpeed,
+                value = Constants.RotationSpeed,
                 showInputField = true
             };
             root.Add(rotationSpeed);
 
             var thrustAmount = new Slider("Thrust Amount")
             {
-                name = ConstantsHandler.ThrustAmountString,
-                value = ConstantsHandler.ThrustAmount,
+                name = Constants.ThrustAmountString,
+                value = Constants.ThrustAmount,
                 showInputField = true
             };
             root.Add(thrustAmount);
 
             var laserMovementSpeed = new Slider("Laser Movement Speed")
             {
-                name = ConstantsHandler.LaserMovementSpeedString,
-                value = ConstantsHandler.LaserMovementSpeed,
+                name = Constants.LaserMovementSpeedString,
+                value = Constants.LaserMovementSpeed,
                 showInputField = true
             };
             root.Add(laserMovementSpeed);
 
             var shootCooldown = new Slider("Shooting Cooldown")
             {
-                name = ConstantsHandler.ShootCooldownString,
-                value = ConstantsHandler.ShootCooldown,
+                name = Constants.ShootCooldownString,
+                value = Constants.ShootCooldown,
                 showInputField = true
             };
             root.Add(shootCooldown);
@@ -128,20 +128,20 @@ namespace Editor
         {
             var root = rootVisualElement;
 
-            ConstantsHandler.MajorAsteroidMovementSpeed =
-                root.Query<Slider>(ConstantsHandler.MajorAsteroidMovementSpeedString).First().value;
-            ConstantsHandler.MediumAsteroidMovementSpeed =
-                root.Query<Slider>(ConstantsHandler.MediumAsteroidMovementSpeedString).First().value;
-            ConstantsHandler.MinorAsteroidMovementSpeed =
-                root.Query<Slider>(ConstantsHandler.MinorAsteroidMovementSpeedString).First().value;
-            ConstantsHandler.ProtectedDuration =
-                root.Query<Slider>(ConstantsHandler.ProtectionDurationString).First().value;
-            ConstantsHandler.TimeToSpawn = root.Query<Slider>(ConstantsHandler.TimeToSpawnString).First().value;
-            ConstantsHandler.RotationSpeed = root.Query<Slider>(ConstantsHandler.RotationSpeedString).First().value;
-            ConstantsHandler.ThrustAmount = root.Query<Slider>(ConstantsHandler.ThrustAmountString).First().value;
-            ConstantsHandler.LaserMovementSpeed =
-                root.Query<Slider>(ConstantsHandler.LaserMovementSpeedString).First().value;
-            ConstantsHandler.ShootCooldown = root.Query<Slider>(ConstantsHandler.ShootCooldownString).First().value;
+            Constants.MajorAsteroidMovementSpeed =
+                root.Query<Slider>(Constants.MajorAsteroidMovementSpeedString).First().value;
+            Constants.MediumAsteroidMovementSpeed =
+                root.Query<Slider>(Constants.MediumAsteroidMovementSpeedString).First().value;
+            Constants.MinorAsteroidMovementSpeed =
+                root.Query<Slider>(Constants.MinorAsteroidMovementSpeedString).First().value;
+            Constants.ProtectedDuration =
+                root.Query<Slider>(Constants.ProtectionDurationString).First().value;
+            Constants.TimeToSpawn = root.Query<Slider>(Constants.TimeToSpawnString).First().value;
+            Constants.RotationSpeed = root.Query<Slider>(Constants.RotationSpeedString).First().value;
+            Constants.ThrustAmount = root.Query<Slider>(Constants.ThrustAmountString).First().value;
+            Constants.LaserMovementSpeed =
+                root.Query<Slider>(Constants.LaserMovementSpeedString).First().value;
+            Constants.ShootCooldown = root.Query<Slider>(Constants.ShootCooldownString).First().value;
         }
     }
 }

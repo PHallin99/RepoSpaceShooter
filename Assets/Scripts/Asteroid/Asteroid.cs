@@ -5,16 +5,15 @@ using UI;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-// To clarify between System.Random and UnityEngine.Random
-
 namespace Asteroid {
-    public class Asteroid : MonoBehaviour {
-        [SerializeField] private AsteroidType asteroidType;
+    public class Asteroid : MonoBehaviour, IPoolObject {
+        [SerializeField] internal AsteroidType asteroidType;
 
         private Collider2D asteroidCollider;
-        private AsteroidsPool asteroidsPool;
         private Vector2 movementDirection = Vector2.zero;
         private float movementSpeed;
+
+        private AsteroidsPool asteroidsPool;
         private UIUpdater uIUpdater;
 
         private void Awake() {
@@ -24,13 +23,13 @@ namespace Asteroid {
             movementDirection = new Vector2(Random.Range(-1, 1f), Random.Range(-1, 1f));
             switch (asteroidType) {
                 case AsteroidType.Major:
-                    movementSpeed = ConstantsHandler.MajorAsteroidMovementSpeed;
+                    movementSpeed = Constants.MajorAsteroidMovementSpeed;
                     break;
                 case AsteroidType.Medium:
-                    movementSpeed = ConstantsHandler.MediumAsteroidMovementSpeed;
+                    movementSpeed = Constants.MediumAsteroidMovementSpeed;
                     break;
                 case AsteroidType.Minor:
-                    movementSpeed = ConstantsHandler.MinorAsteroidMovementSpeed;
+                    movementSpeed = Constants.MinorAsteroidMovementSpeed;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -45,65 +44,12 @@ namespace Asteroid {
             transform.Translate(movementDirection.normalized * (movementSpeed * Time.deltaTime), Space.World);
         }
 
-        private void OnEnable() {
-            StartCoroutine(SpawnProtectionCounter());
-        }
-
-        private void OnDisable() {
-            asteroidCollider.enabled = false;
-        }
-
         private void OnTriggerEnter2D(Collider2D collision) {
-            // if (isSpawnProtected) {
-            //     return;
-            // }
-
-            if (collision.CompareTag(ConstantsHandler.LaserTag)) {
+            if (collision.CompareTag(Constants.LaserTag)) {
                 GiveScore();
             }
 
-            ManageCollision();
-        }
-
-        public void Respawn() {
-            asteroidCollider.enabled = false;
-            // isSpawnProtected = true;
-            StartCoroutine(SpawnProtectionCounter());
-        }
-
-        private void ManageCollision() {
-            var asteroid = gameObject;
-            AsteroidType targetAsteroid;
-            const int splitAmount = 3;
-
-            switch (asteroidType) {
-                case AsteroidType.Major:
-                    targetAsteroid = AsteroidType.Medium;
-                    break;
-                case AsteroidType.Medium:
-                    targetAsteroid = AsteroidType.Minor;
-                    break;
-                case AsteroidType.Minor:
-                    asteroidsPool.ReturnAsteroid(asteroidType, asteroid);
-                    gameObject.SetActive(false);
-                    return;
-                default:
-                    Debug.LogError("Default case in DestroyAsteroid should not be able to happen", this);
-                    return;
-            }
-
-            for (var i = 0; i < splitAmount; i++) {
-                var splitAsteroid = asteroidsPool.GetAsteroid(targetAsteroid);
-                if (!splitAsteroid) {
-                    continue;
-                }
-
-                splitAsteroid.transform.position = asteroid.transform.position;
-                splitAsteroid.SetActive(true);
-            }
-
-            asteroid.SetActive(false);
-            asteroidsPool.ReturnAsteroid(asteroidType, asteroid);
+            ResetObject();
         }
 
         private void GiveScore() {
@@ -124,9 +70,49 @@ namespace Asteroid {
         }
 
         private IEnumerator SpawnProtectionCounter() {
-            yield return new WaitForSeconds(ConstantsHandler.ProtectedDuration);
+            yield return new WaitForSeconds(Constants.ProtectedDuration);
             asteroidCollider.enabled = true;
-            // isSpawnProtected = false;
+        }
+
+        public void EnableObject() {
+            gameObject.SetActive(true);
+            StartCoroutine(SpawnProtectionCounter());
+        }
+
+        public void ResetObject() {
+            asteroidCollider.enabled = false;
+            var asteroid = gameObject;
+            AsteroidType targetAsteroid;
+            const int splitAmount = 3;
+
+            switch (asteroidType) {
+                case AsteroidType.Major:
+                    targetAsteroid = AsteroidType.Medium;
+                    break;
+                case AsteroidType.Medium:
+                    targetAsteroid = AsteroidType.Minor;
+                    break;
+                case AsteroidType.Minor:
+                    asteroidsPool.ReturnObject(this);
+                    gameObject.SetActive(false);
+                    return;
+                default:
+                    Debug.LogError("Default case in Asteroid Collision Event should not be able to happen", this);
+                    return;
+            }
+
+            for (var i = 0; i < splitAmount; i++) {
+                var poolObject = asteroidsPool.GetObjectOfType(targetAsteroid);
+                if (poolObject is not Asteroid newAsteroid) {
+                    continue;
+                }
+
+                newAsteroid.transform.position = asteroid.transform.position;
+                newAsteroid.gameObject.SetActive(true);
+            }
+
+            asteroidsPool.ReturnObject(this);
+            asteroid.SetActive(false);
         }
     }
 }
