@@ -24,4 +24,25 @@ Coming to the second part of the Unity DOTS is the Entity Component System where
 Now onto the last part of my optimising the project from a classic Unity object oriented programming style project, which is the burst compiler. The burst compiler translates C# code into very performant machine code and especially shines at optimising C# Jobs. I used plenty of jobs in the project that all are burst compiled to squeeze out even more quickness and performance in the project. The whole game almost runs on these jobs that operate in the Systems part of the project and makes all the operations needed through the game. <br>
 
 # Edit After Feedback
+After recieving feedback for the project and its purpose, I have iterated on the project to: both properly display data from my findings, during my testing comparing the OOP version and the DOTS version, using the Unity Profiler and also to show my understanding of efficient memory usage. <br>
 
+In my original hand-in I believed first making the game in a object oriented way where the game is built with objects which are allocated onto the heap where they constantly have to be managed by garbage collection, then in a second part remaking the same game with purely data oriented programming would show how the game would run way smoother because of its very efficient memory allocation onto the stack and the nature of data oriented programming. This, I believed was the display of how swapping methods of thinking around how you create games and projects would make efficient use of computer hardware by using a data oriented method. <br>
+
+I did miss showing the findings I had using the Unity Profiler comparing the two versions of the game. This was my findings: <br>
+
+After a while in the object oriented designed game, with hundreds of objects flying around on the screen it looked like this:
+![image](https://github.com/PHallin99/RepoSpaceShooter/assets/56823485/6e92363d-7180-4b86-9715-739215fde0fe) <br>
+The CPU time for every frame was always around 6-7ms where the game ran with object oriented design. <br>
+
+When I then looked at the runtime performance for the data oriented game where I used every part of the DOTS packages and utilized as much performance from the technology as I could the new data looked like this:
+![image](https://github.com/PHallin99/RepoSpaceShooter/assets/56823485/8ddf72c2-2bfb-431e-a051-97d9564a9f41)
+The game now runs at 3-4ms because of how the data oriented design way more efficiently works with memory where as I stated before these structs get packed together after eachother with fixed sizes and can then way easier be read by the CPU compared to how it has to jump around in memory to access the different parts of the objects in the object oriented design. <br>
+
+## Commit after Feedback
+In the short time I had available to revisit the project and showcase an optimisation of memory usage was my implementation of object pooling in the object oriented version of the game. I revisited the project after the feedback I was given where I added object pooling for both asteroids and lasers in the game. This new version has new scripts for the pooling of the asteroids and lasers:
+[https://github.com/PHallin99/RepoSpaceShooter/blob/dev/oop/Assets/Scripts/Asteroid/AsteroidsPool.cs] <br>
+The link should show the recently added script for pooling the asteroids and I can showcase the improvements to memory usage and heap vs stack. The prior implementation of the asteroids was instantiating completely new ones from scratch in runtime. This of course will create allocations on the heap in runtime where it would actively, progressing into worse states, the longer you played the game. In this new implementation I allocate a set size of a pool of asteroids that will be used in the whole lifetime of the game. The three different pools are declared as `Stack<IPoolObject>` and hold references to the asteroid objects and are essentially memory addresses pointing to objects on the heap. The stack itself is allocated on the stack but of course the objects that it holds are allocated on the heap. When I use `Instantiate()` I preheat the stack by allocating on the heap upon startup of the game. This was I avoid having any type of creation of asteroid objects during runtime. <br>
+
+## Tags
+I have kept the old tags I had in the repository where the optimisation relevant code is present. I have also added a new tag called Object-Pooling for this new commit after I recieved the feedback! <br>
+I belive I have covered everything that was mentioned in the feedback during this short time I had to revisit the project before the resubmission date. Please let me know if there is more I require for this submission!
